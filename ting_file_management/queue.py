@@ -14,13 +14,13 @@ class Queue(AbstractQueue):
         self._size += 1
 
     def dequeue(self):
-        returned = self.queue[0]
         if self._size > 0:
+            returned = self.queue[0]
             self.queue = self.queue[1:]
             self._size -= 1
             return returned
         else:
-            raise IndexError("A fila está vazia")
+            return None
 
     def search(self, index):
         if index >= 0 and index < self._size:
